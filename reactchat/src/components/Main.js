@@ -1,30 +1,32 @@
+import { faNotesMedical } from '@fortawesome/free-solid-svg-icons';
 import React, { useEffect } from 'react';
 import '../assets/css/Main.css';
 import  RenderMessages from "../components/RenderMessages";
 import RenderResponse from './RenderResponse';
+import FormItens from './Form';
 
- const Main = ({devs, errMess, isLoading}) => { 
-     console.log({devs, errMess, isLoading});
+ const Main = () => {  
+     
+   
+    const response = [
+        
+        {placeholder: "Nome e sobrenome"},
+        {placeholder: "Cidade"},
+        {placeholder: 'dataNacimento'},
+        {placeholder: "E-mail"},
+        {placeholder: "Avaliacao"}
+    ]
         
     return (
         <main>
             <div className="containerMessages">
-                <ul >
-                    
+                {/* <ul >                    
                     <RenderMessages/>
-                    <RenderResponse/>
-
-                    <RenderMessages/>
-                    <RenderResponse/>
-
-                    <RenderMessages/>
-                    <RenderResponse/>
-
-                    <RenderMessages/> 
-                    <RenderResponse/>            
+                    <RenderResponse/>                           
                                 
                                 
-                </ul>
+                </ul> */}
+                <FormItens/>
             </div>
            
         </main>

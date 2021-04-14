@@ -3,12 +3,13 @@ import '../assets/css/RenderResponse.css';
 import triangle from '../assets/images/triangle.svg';
 
 
- const RenderResponse = () => { 
+ const RenderResponse = ({children, nota, onSubmit}) => { 
      return(
         <li >
             <div className="balao">
-                <input type="text" className="balaoInput" placeholder="digite o texto"/> 
-                <button  className="balaoButton"><img src={triangle} alt="enviar" className="filter-green"/></button>
+               {children}
+               { !nota ? <button  className="balaoButton" onClick={onSubmit}><img src={triangle} alt="enviar" className="filter-green"/></button>
+               : null}
             </div>            
         </li>
      )           

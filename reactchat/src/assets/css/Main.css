@@ -4,24 +4,23 @@ main {
 }
 main .containerMessages{
     width: 320px;
-    height: 00px;
-   
+    height:200px;
     box-shadow:  0 0 14px rgba(0, 0, 0, 0.02);
     border-radius: 2px;
     padding: 30px 20px; 
 }
 
-main div ul {
+/* main div ul {
     display: flex;
     flex-direction: column;
     align-items: center;
-    list-style: none; /* remover as bolinhas da lista */
+    list-style: none; 
+    min-height: 330px;
     overflow-y: auto;
-    height: 300px;
     width: 100%;
     padding-right: 30px;
     background-color: rgb(224, 238, 242);
-}
+} */
 li.dev-item{
     
      box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.02);

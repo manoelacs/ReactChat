@@ -3,16 +3,14 @@ import smile from '../assets/images/smile.jpg';
 import '../assets/css/RenderMessages.css';
 
 
- const RenderMessages = () => { 
+ const RenderMessages = ({message}) => { 
      return(
         <li className="dev-item">
         
             <img src={smile} alt="Chatnilson"/>
             <div className="balao2">
                         
-                <p> "Olá, eu sou Chatnilson, tudo bem? Para começarmos,
-                    preciso saber seu nome."
-                </p>
+                <p> {message} </p>
                         
             </div>      
         </li>
