@@ -10,6 +10,36 @@ li{
 li img{
     padding-right: 20px;
 }
+li .boxText{
+    background-color: #FFFFFF;
+    border-radius: 5px; 
+    padding: 10px; 
+    display: flex;  
+    border: 1px solid black;
+}
+li div.p{
+    margin: 10px;
+}
+
+/* li.messageQuad{
+    
+    box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.02);
+    border-radius: 2px;
+    padding: 20px;
+}
+
+li.messageQuad img{
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+}
+
+.messageQuad p {
+     color: #666666;
+     font-size: 14px;
+     line-height: 20px;
+     margin: 10px 0;
+} */
 
 .balao2{
     margin: 0 auto; 
@@ -40,13 +70,3 @@ li img{
     top: 30px;
 }
 
-li .boxText{
-    background-color: #FFFFFF;
-    border-radius: 5px; 
-    padding: 10px; 
-    display: flex;  
-    border: 1px solid black;
-}
-li div.p{
-    margin: 10px;
-}

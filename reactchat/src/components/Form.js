@@ -5,6 +5,7 @@ import RenderMessages from './RenderMessages';
 import RenderResponse from './RenderResponse';
 import StarComponent from './StarComponents';
 import '../assets/css/Form.css';
+import { postUser } from '../services/user';
 
 
 
@@ -41,7 +42,11 @@ const FormItens = () => {
         .required('Required')
     }),
     onSubmit: values => {
+      postUser( JSON.stringify(values, null, 2))
       alert(JSON.stringify(values, null, 2));
+      
+      
+
     },
   });
   const onChange = () =>{
@@ -62,7 +67,7 @@ console.log(cidadeVisible);
         <ul className="wrapper">
             
             <RenderMessages message={dataMessages[0].messenger}/>
-            <RenderResponse onSubmit={()=> setCidadeVisible(true)} >
+            <RenderResponse onSubmit={()=> setCidadeVisible(true)}  >
                 <input
                         id="fullName"
                         name="fullName"
@@ -119,8 +124,8 @@ console.log(cidadeVisible);
             { emailVisible && 
             <> 
                <RenderMessages message={dataMessages[3].messenger} />
-                 <RenderResponse onSubmit={()=> setAvaliacaoVisible(true)}>
-                     <input
+               <RenderResponse onSubmit={()=> setAvaliacaoVisible(true)} errors={formik.errors.email}>
+                  <input
                              id="email"
                              name="email"
                              type="email"
@@ -128,12 +133,12 @@ console.log(cidadeVisible);
                              onChange={formik.handleChange}
                              onBlur={formik.handleBlur}
                              value={formik.values.email}
-                         />
+                  />
                          {/* formik.touched.email && 
                          formik.errors.email ? (
                              <div>{formik.errors.email}</div>
                          ) : null */}
-                 </RenderResponse >
+              </RenderResponse >
             </>}
 
             {avaliacaoVisible && 
