@@ -6,17 +6,18 @@ import RenderResponse from './RenderResponse';
 import StarComponent from './StarComponents';
 import '../assets/css/Form.css';
 import { postUser } from '../services/user';
-
+import StyledInput from './Input';
 
 
 const FormItens = () => {
-
+  
 
   const [cidadeVisible, setCidadeVisible] = useState(false);
   const [nacimentoDateVisible, setNascimentoDateVisible] = useState(false);
   const [emailVisible, setEmailVisible] = useState(false);
   const [avaliacaoVisible, setAvaliacaoVisible] = useState(false);
 
+ 
 
   const formik = useFormik({
     initialValues: {
@@ -44,14 +45,8 @@ const FormItens = () => {
     onSubmit: values => {
       postUser( JSON.stringify(values, null, 2))
       alert(JSON.stringify(values, null, 2));
-      
-      
-
     },
-  });
-  const onChange = () =>{
-
-  }
+  });  
 
   const dataMessages = [
     { messenger: "Olá, su sou Chatnilson, tudo bem? Para começarmos, preciso saber seu nome completo."},
@@ -60,32 +55,34 @@ const FormItens = () => {
     { messenger: "Agora me fala teu e-mail, por gentileza"},
     { messenger: "Você finalizou o teste. Faça uma avaliação sobre o processo que realizou até chegar aqui. Nós agradecemos"}
 ]
-console.log(dataMessages)
-console.log(cidadeVisible);
+
   return (
     <form onSubmit={formik.handleSubmit}>
         <ul className="wrapper">
+           <>
+              <RenderMessages message={dataMessages[0].messenger} active={true}/>
+              <RenderResponse onClick={ () => setCidadeVisible(true)}  errors={formik.errors.fullName} >
+                  <StyledInput
+                          id="fullName"
+                          name="fullName"
+                          type="text"
+                          placeholder="Nome e sobrenome"
+                          onChange={formik.handleChange}
+                          onBlur={formik.handleBlur}
+                          value={formik.values.fullName}
+                          errors={formik.touched.fullName}
+                  />               
+              </RenderResponse >
+
+           </>
             
-            <RenderMessages message={dataMessages[0].messenger}/>
-            <RenderResponse onSubmit={()=> setCidadeVisible(true)}  >
-                <input
-                        id="fullName"
-                        name="fullName"
-                        type="text"
-                        placeholder="Nome e sobrenome"
-                        onChange={formik.handleChange}
-                        onBlur={formik.handleBlur}
-                        value={formik.values.fullName}
-                />
-                { formik.touched.fullName && formik.errors.fullName ? (
-                    <div style={{color: 'red'}}>{formik.errors.fullName}</div>
-                ) : null }
-            </RenderResponse >
             { cidadeVisible &&
-                <>
-                    <RenderMessages  message={dataMessages[1].messenger}/>
-                    <RenderResponse onSubmit={()=> setNascimentoDateVisible(true)}>
-                        <input
+                <>        
+                  
+               
+                    <RenderMessages  message={dataMessages[1].messenger} active={cidadeVisible} />
+                    <RenderResponse onClick={()=> setNascimentoDateVisible(true)} errors={formik.errors.cidade}>
+                        <StyledInput
                                 id="cidade"
                                 name="cidade"
                                 type="text"
@@ -93,20 +90,19 @@ console.log(cidadeVisible);
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}
                                 value={formik.values.cidade}
-                            />
-                            {/* formik.touched.cidade && formik.errors.cidade ? (
-                                <div>{formik.errors.cidade}</div>
-                            ) : null */}
+                                errors={formik.touched.cidde}
+                            />                           
                     </RenderResponse>
+                   
                 </>
             }
 
             { 
                nacimentoDateVisible && 
             <>
-                <RenderMessages  message={dataMessages[2].messenger}/>
-                 <RenderResponse onSubmit={()=> setEmailVisible(true)}>
-                     <input
+                <RenderMessages  message={dataMessages[2].messenger} active={nacimentoDateVisible}/>
+                 <RenderResponse onClick={()=> setEmailVisible(true)} errors={formik.errors.nascimentoDate}>
+                     <StyledInput
                              id="nascimentoDate"
                              name="nascimentoDate"
                              type="date"
@@ -114,18 +110,20 @@ console.log(cidadeVisible);
                              onChange={formik.handleChange}
                              onBlur={formik.handleBlur}
                              value={formik.values.nascimentoDate}
-                         />
-                         {/* formik.touched.nascimentoDate && formik.errors.nascimentoDate ? (
-                             <div>{formik.errors.nascimentoDate}</div>
-                         ) : null */}
+                             errors={formik.touched.nascimentoDate}
+                         />                         
                  </RenderResponse>  
             </> }
      
             { emailVisible && 
             <> 
-               <RenderMessages message={dataMessages[3].messenger} />
-               <RenderResponse onSubmit={()=> setAvaliacaoVisible(true)} errors={formik.errors.email}>
-                  <input
+               <RenderMessages
+                  message={dataMessages[3].messenger} 
+                  active={emailVisible} />
+               <RenderResponse 
+                  onClick={()=> setAvaliacaoVisible(true)} 
+                  errors={formik.errors.email}>
+                  <StyledInput
                              id="email"
                              name="email"
                              type="email"
@@ -133,18 +131,17 @@ console.log(cidadeVisible);
                              onChange={formik.handleChange}
                              onBlur={formik.handleBlur}
                              value={formik.values.email}
-                  />
-                         {/* formik.touched.email && 
-                         formik.errors.email ? (
-                             <div>{formik.errors.email}</div>
-                         ) : null */}
+                             errors={formik.touched.email && formik.errors.email}
+                  />                         
               </RenderResponse >
             </>}
-
             {avaliacaoVisible && 
             <>     
-                 <RenderMessages  message={dataMessages[4].messenger}/>
-                  <RenderResponse nota={1}>
+                 <RenderMessages  
+                 message={dataMessages[4].messenger} 
+                 active={avaliacaoVisible}                
+                 />
+                  <RenderResponse nota={1} errors={formik.errors.avaliacao}>
                       <StarComponent/>
                   </RenderResponse>
      

@@ -6,6 +6,7 @@ ul{
     min-height: 330px;
     height: 340px;
     overflow-y:scroll;
+    scroll-behavior: smooth;
     width: 100%;
     padding-right: 30px;
     background-color: rgb(224, 238, 242);

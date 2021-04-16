@@ -1,5 +1,4 @@
 import api from '../services/api'; 
-import {baseUrl } from "../services/baseUrl";
 
 export  const postUser = async (fullname, cidade, nascimentoDate, email, avaliacao ) =>{
 
