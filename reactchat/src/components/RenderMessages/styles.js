@@ -35,10 +35,8 @@ export const Balloon = styled.div`
     position: absolute;
     border-left: 20px solid transparent;
     border-right: 20px solid transparent;
-    /*Faz seta "apontar para baixo. Definir o valor como 'top' fará ela "apontar para cima" */
-    /*Aqui entra a cor da "aba" do balão */
     border-bottom: 20px solid #FFFFFF;
-    left: -20px; /*localização. Experimente alterar para 'bottom'*/
+    left: -20px; 
     right: 20%;
     top: 30px;
 }
@@ -58,6 +56,6 @@ export const ContainerMessage = styled.p`
 export const PerfilImage = styled.img`
     height: 50px;
     width: 50px;
-    border-radius: 100%;
+   
     padding-right: 20px;
 `;

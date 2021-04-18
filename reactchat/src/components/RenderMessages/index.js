@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import smile from '../../assets/images/smile.jpg';
+import smile from '../../assets/images/smile.svg';
 import { Container, Balloon, PerfilImage, ContainerMessage} from './styles';
 
 
