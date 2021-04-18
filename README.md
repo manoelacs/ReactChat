@@ -13,9 +13,9 @@ Telinha de chat. </br>
 
                 
  ## Funcionalidade:
-- [ ] Máscara de validação de email
+- [X] Máscara de validação de email
 - [ ] Estados diferentes para para component que está com dados incorretos
-- [ ] Auto complete para as cidades
+- [X] Auto complete para as cidades
 - [ ] Testes  e documentação do projeto
                
 
@@ -27,16 +27,19 @@ Telinha de chat. </br>
     </thead>
     <tbody>
         <tr>
-            <td> axios </td>   <td> ^0.20.0</td> 
+            <td> axios </td>   <td> ^0.21.1</td> 
         </tr>
         <tr>
-            <td> formik</td>  <td>  ^2.1.7 </td>
+            <td> formik</td>  <td>  ^2.2.6 </td>
         </tr>
         <tr>
-            <td> react</td>  <td>  ^16.13.1 </td>
+            <td> react</td>  <td>  ^17.0.2 </td>
       </tr>
         <tr>
-            <td> yup</td>  <td>  ^16.13.1 </td>
+            <td> yup</td>  <td>  ^0.32.9 </td>
+        </tr>
+         <tr>
+            <td> styled components </td>  <td>  ^5.2.3 </td>
         </tr>
     </tbody>
 </table>
@@ -45,6 +48,7 @@ Telinha de chat. </br>
     
     
     npm start inicia a aplicação no endereço http://localhost:3000
+    usando http://mockapi.io/ pra simular api
     
     ----------------------------------------------------------------------------
 
