@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import RenderResponse from '../RenderResponse';
-import StarComponent from '../StarComponents';
+import StarComponent from '../StarComponent';
 
 const RenderStar = ({setCountStar, countStar}) => {
     const initControlStar = [ 
@@ -15,12 +15,7 @@ const RenderStar = ({setCountStar, countStar}) => {
 
     const setMatchTrue = (id) => {
        let prev = controlStar[id].prev;
-       let next = controlStar[id].next
-      
-       /* if(prev !== -1 && next !== -1)  {
-        console.log(controlStar[next].match,controlStar[prev].match )
-       } */
-        
+       let next = controlStar[id].next;     
 
         if(prev === -1){
             if(!controlStar[next].match){

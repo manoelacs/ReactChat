@@ -47,7 +47,7 @@ const StyledForm = () => {
     onSubmit: values => {
       formik.values.avaliacao = countStar;
       postUser( JSON.stringify(values, null, 2))
-      //alert(JSON.stringify(values, null, 2));
+      alert(JSON.stringify(values, null, 2));
     },
   });  
 
