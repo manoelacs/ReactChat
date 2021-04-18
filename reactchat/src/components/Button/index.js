@@ -1,8 +1,12 @@
 import React from 'react';
-import {Button} from './styles';
+import {Button, Icone} from './styles';
+import triangle from '../../assets/images/triangle.svg';
 
-const StyledButton = ( {children}, props) => {
+const StyledButton = (props) => {
+    console.log(props)
     return(
-        <Button {...props }>{children}</Button>
+        <Button {...props}>
+             <Icone src={triangle} alt="enviar" errors={props.errors} />
+        </Button>
     )
 }; export default StyledButton;

@@ -1,16 +1,16 @@
 import React, {useState} from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import StyledMessages from './RenderMessages';
-import StyledResponse from './RenderResponse';
-import '../assets/css/Form.css';
-import { postUser } from '../services/user';
-import StyledInput from './Input';
-import ResponseStar from './ResponseStar';
-import StyledSubmitButton from './SubmitButton';
+import StyledMessages from '../RenderMessages';
+import StyledResponse from '../RenderResponse';
+import { postUser } from '../../services/user';
+import StyledInput from '../Input';
+import ResponseStar from '../ResponseStar';
+import StyledSubmitButton from '../SubmitButton';
+import {Form, Container} from './styles';
 
 
-const FormItens = () => {  
+const StyledForm = () => {  
   
 
   const [cidadeVisible, setCidadeVisible] = useState(false);
@@ -60,11 +60,11 @@ const FormItens = () => {
 ]
 console.log(countStar)
   return (
-    <form onSubmit={formik.handleSubmit}>
-        <ul className="wrapper">
-           { <>
+    <Form onSubmit={formik.handleSubmit}>
+        <Container>
+            <>
               <StyledMessages message={dataMessages[0].messenger} active={true}/>
-              <StyledResponse onClick={ () => setCidadeVisible(true)}  errors={formik.touched.fullName} >
+              <StyledResponse onClick={ () => setCidadeVisible(true)}   >
                   <StyledInput
                           id="fullName"
                           name="fullName"
@@ -76,15 +76,16 @@ console.log(countStar)
                           errors={formik.touched.fullName}
                   />               
               </StyledResponse >
-
+              
+           
            </>
-            /*
+            
             { cidadeVisible &&
                 <>        
                   
                
                     <StyledMessages  message={dataMessages[1].messenger} active={cidadeVisible} />
-                    <StyledResponse onClick={()=> setNascimentoDateVisible(true)} errors={formik.touched.cidde}>
+                    <StyledResponse onClick={()=> setNascimentoDateVisible(true)} >
                         <StyledInput
                                 id="cidade"
                                 name="cidade"
@@ -104,7 +105,7 @@ console.log(countStar)
                nacimentoDateVisible && 
             <>
                 <StyledMessages  message={dataMessages[2].messenger} active={nacimentoDateVisible}/>
-                 <StyledResponse onClick={()=> setEmailVisible(true)} errors={formik.touched.nascimentoDate}>
+                 <StyledResponse onClick={()=> setEmailVisible(true)} >
                      <StyledInput
                              id="nascimentoDate"
                              name="nascimentoDate"
@@ -134,12 +135,11 @@ console.log(countStar)
                              onChange={formik.handleChange}
                              onBlur={formik.handleBlur}
                              value={formik.values.email}
-                             errors={[formik.touched.email, formik.errors.email]}
+                             errors={ formik.errors.email}
                   />                         
               </StyledResponse >
-            </>} */}
-            {//avaliacaoVisible 
-            true && 
+            </>} 
+            { avaliacaoVisible  && 
             <>     
                  <StyledMessages  
                   message={dataMessages[4].messenger} 
@@ -150,8 +150,8 @@ console.log(countStar)
                  <StyledSubmitButton type='submit'/> 
             </> }       
 
-        </ul>
+        </Container>
       
-    </form>
+    </Form>
   );
-}; export default FormItens;
+}; export default StyledForm;
