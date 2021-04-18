@@ -58,7 +58,6 @@ const StyledForm = () => {
     { messenger: "Agora me fala teu e-mail, por gentileza"},
     { messenger: "Você finalizou o teste. Faça uma avaliação sobre o processo que realizou até chegar aqui. Nós agradecemos"}
 ]
-console.log(countStar)
   return (
     <Form onSubmit={formik.handleSubmit}>
         <Container>

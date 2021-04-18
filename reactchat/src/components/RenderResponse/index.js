@@ -4,7 +4,7 @@ import StyledButton from '../Button';
 import {Container, Balloon, ContainerMessageError} from './styles';
 
 const StyledResponse = ({children, nota, onClick, errors}) => { 
-    console.log(errors)
+    
     return(
        <Container >
            <Balloon>

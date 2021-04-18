@@ -8,7 +8,6 @@ const StyledMain = () => {
     const handleOpenChat = () => {
         setIsOpenChat(!isOpenChat);
     }
-    console.log(isOpenChat);
     return(
         <>
         <Container>
