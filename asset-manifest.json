@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/ReactChat/static/css/main.667ae3c8.chunk.css",
-    "main.js": "/ReactChat/static/js/main.5d423ae1.chunk.js",
-    "main.js.map": "/ReactChat/static/js/main.5d423ae1.chunk.js.map",
+    "main.js": "/ReactChat/static/js/main.dba4c72c.chunk.js",
+    "main.js.map": "/ReactChat/static/js/main.dba4c72c.chunk.js.map",
     "runtime-main.js": "/ReactChat/static/js/runtime-main.66c07015.js",
     "runtime-main.js.map": "/ReactChat/static/js/runtime-main.66c07015.js.map",
     "static/css/2.28721b01.chunk.css": "/ReactChat/static/css/2.28721b01.chunk.css",
@@ -16,7 +16,7 @@
     "static/media/chatbot.1a9466ba.svg": "/ReactChat/static/media/chatbot.1a9466ba.svg",
     "static/media/estrela.afa0384a.svg": "/ReactChat/static/media/estrela.afa0384a.svg",
     "static/media/home.3da7696b.svg": "/ReactChat/static/media/home.3da7696b.svg",
-    "static/media/smile.acb28d7d.jpg": "/ReactChat/static/media/smile.acb28d7d.jpg",
+    "static/media/smile.7b6c19ca.svg": "/ReactChat/static/media/smile.7b6c19ca.svg",
     "static/media/star_white_24dp.bf198165.svg": "/ReactChat/static/media/star_white_24dp.bf198165.svg",
     "static/media/triangle.15a6cf1f.svg": "/ReactChat/static/media/triangle.15a6cf1f.svg"
   },
@@ -25,6 +25,6 @@
     "static/css/2.28721b01.chunk.css",
     "static/js/2.0b202f53.chunk.js",
     "static/css/main.667ae3c8.chunk.css",
-    "static/js/main.5d423ae1.chunk.js"
+    "static/js/main.dba4c72c.chunk.js"
   ]
 }
