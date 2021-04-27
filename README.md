@@ -1,5 +1,6 @@
 # ReactChat
-Telinha de chat. </br>
+Telinha de chat: https://manoelacs.github.io/ReactChat/ </br>
+ 
 
 <pre><code>User:{ 
             id: identificador único de usuário, 
@@ -49,6 +50,7 @@ Telinha de chat. </br>
     
     npm start inicia a aplicação no endereço http://localhost:3000
     usando http://mockapi.io/ pra simular api
+    
     
     ----------------------------------------------------------------------------
 
